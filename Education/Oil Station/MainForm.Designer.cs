@@ -1,4 +1,4 @@
-﻿namespace DisStation
+namespace DisStation
 {
     partial class MainForm
     {
@@ -373,13 +373,13 @@
             // 
             this.sumCafe.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.sumCafe.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.sumCafe.ForeColor = System.Drawing.SystemColors.WindowText;
             this.sumCafe.Location = new System.Drawing.Point(6, 19);
             this.sumCafe.Multiline = true;
             this.sumCafe.Name = "sumCafe";
             this.sumCafe.ReadOnly = true;
             this.sumCafe.Size = new System.Drawing.Size(282, 75);
             this.sumCafe.TabIndex = 1;
-            this.sumCafe.Text = "NotSome.TXT";
             this.sumCafe.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.sumCafe.TextChanged += new System.EventHandler(this.sumCafe_TextChanged);
             // 
@@ -394,6 +394,7 @@
             this.tbCountCafe_4.Text = "1";
             this.tbCountCafe_4.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.tbCountCafe_4.Click += new System.EventHandler(this.tbCafe_Click);
+            this.tbCountCafe_4.TextChanged += new System.EventHandler(this.tbCountCafe_TextChanged);
             // 
             // tbCocaCola_4
             // 
@@ -508,6 +509,7 @@
             this.tbCountCafe_3.Tag = "tbSaleCheeseB_3";
             this.tbCountCafe_3.Text = "1";
             this.tbCountCafe_3.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.tbCountCafe_3.TextChanged += new System.EventHandler(this.tbCountCafe_TextChanged);
             // 
             // tbCountCafe_2
             // 
@@ -519,6 +521,7 @@
             this.tbCountCafe_2.Tag = "tbSaleHamb_2";
             this.tbCountCafe_2.Text = "1";
             this.tbCountCafe_2.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.tbCountCafe_2.TextChanged += new System.EventHandler(this.tbCountCafe_TextChanged);
             // 
             // btnCalculate
             // 
@@ -530,14 +533,17 @@
             this.btnCalculate.TabIndex = 2;
             this.btnCalculate.Text = "Рассчитать";
             this.btnCalculate.UseVisualStyleBackColor = true;
+            this.btnCalculate.Click += new System.EventHandler(this.btnCalculate_Click);
             // 
             // tbGeneralSum
             // 
+            this.tbGeneralSum.Font = new System.Drawing.Font("Microsoft Sans Serif", 25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.tbGeneralSum.Location = new System.Drawing.Point(405, 369);
             this.tbGeneralSum.Multiline = true;
             this.tbGeneralSum.Name = "tbGeneralSum";
             this.tbGeneralSum.Size = new System.Drawing.Size(216, 70);
             this.tbGeneralSum.TabIndex = 3;
+            this.tbGeneralSum.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // lbItogo
             // 
@@ -560,9 +566,11 @@
             this.Controls.Add(this.btnCalculate);
             this.Controls.Add(this.gbStationCafe);
             this.Controls.Add(this.gbStationOil);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "MainForm";
             this.Text = "Автозаправка";
             this.Load += new System.EventHandler(this.MainForm_Load);
+            this.Resize += new System.EventHandler(this.MainForm_Resize);
             this.gbStationOil.ResumeLayout(false);
             this.gbStationOil.PerformLayout();
             this.gbClient.ResumeLayout(false);
@@ -585,7 +593,6 @@
         private System.Windows.Forms.GroupBox gbPaymentOil;
         private System.Windows.Forms.TextBox sumOil;
         private System.Windows.Forms.GroupBox gbPaymentCafe;
-        private System.Windows.Forms.TextBox sumCafe;
         private System.Windows.Forms.Button btnCalculate;
         private System.Windows.Forms.TextBox tbGeneralSum;
         private System.Windows.Forms.Label lbItogo;
@@ -619,6 +626,6 @@
         private System.Windows.Forms.TextBox tbCountCafe_1;
         private System.Windows.Forms.TextBox tbCountCafe_3;
         private System.Windows.Forms.TextBox tbCountCafe_2;
+        private System.Windows.Forms.TextBox sumCafe;
     }
 }
-
